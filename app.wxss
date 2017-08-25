@@ -1,0 +1,31 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+ color:#666;
+  font-size:30rpx;
+  overflow: hidden;
+} 
+.fl{
+  float:left;
+}
+.fr{
+  float:right;
+}
+.nh{
+ overflow: hidden;
+}
+page {
+  background: #efefef;
+  font-family: Microsoft YaHei;
+}
+.text-over{
+ white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
+}
+.not_exists{
+  text-align: center;
+  color:red;
+  font-size:30rpx;
+
+}

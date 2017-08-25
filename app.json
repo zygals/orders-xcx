@@ -1,0 +1,43 @@
+{
+  "pages": [
+        "pages/orders/orders",
+      "pages/myComments/myComments",
+    "pages/index/index",
+    "pages/order/order",
+
+    "pages/orderIn/orderIn", 
+    "pages/shop/shop",
+    "pages/goods/goods",
+
+    "pages/address/address",
+    "pages/addAddress/addAddress",
+    "pages/editAddress/editAddress",
+    "pages/my/my"
+  ],
+  "tabBar": {
+    "backgroundColor": "white",
+    "selectedColor": "red",
+    "color": "black",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/shop.png",
+        "selectedIconPath": "images/index1.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/my0.png",
+        "selectedIconPath": "images/my1.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F1554E",
+    "navigationBarTextStyle": "white"
+  },
+  "debug":true
+}
