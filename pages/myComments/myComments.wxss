@@ -1,0 +1,57 @@
+/* pages/myComments/myComments.wxss */
+
+page {
+  background: #efefef;
+}
+
+.container {
+}
+
+.sum {
+  padding: 27rpx 27rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #dcdcdc;
+}
+
+.sum .pjsum {
+  color: red;
+}
+
+.list_ {
+  background: #fff;
+  padding: 28rpx 27rpx 30rpx 27rpx;
+  margin-bottom:20rpx;
+}
+
+.user_ico image {
+  width: 97rpx;
+  height: 90rpx;
+}
+
+.good_name_w image {
+  width: 30rpx;
+  height: 28rpx;
+  margin-right:16rpx;
+}
+
+.del_img_w image {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right:20rpx;
+}
+
+.cont_w {
+  margin-left: 27rpx;
+  width: 80%;
+}
+
+.good_name_w {
+  margin-top: 33rpx;
+}
+
+.del_w {
+  margin-top: 33rpx;
+}
+
+.del_w .del_img_w {
+}

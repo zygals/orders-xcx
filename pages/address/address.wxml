@@ -1,0 +1,28 @@
+<view class="container">
+
+  <view class="addr_info nh">
+    <view class="name_tel nh">
+      <text class="fl">姓名</text>
+      <text class="fr">15699098878</text>
+    </view>
+    <view class="detail">
+      <text>默认地址详情。。。</text>
+    </view>
+  </view>
+  <view class="addr_act nh">
+    <view class="default fl">
+      <label>
+        <checkbox value="value" checked="false" />
+        <text>默认地址</text>
+      </label>
+
+    </view>
+    <view class="edit_del fr">
+      <image src="../../images/adddress_edit.png"></image>
+      <text class="edit">编辑</text>
+      <image src="../../images/adddress_del.png"></image>
+      <text>删除</text>
+    </view>
+  </view>
+</view>
+

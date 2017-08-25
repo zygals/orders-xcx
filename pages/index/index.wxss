@@ -1,0 +1,109 @@
+/**index.wxss**/
+
+.attr_shop_wrap {
+  padding: 20rpx;
+  overflow: hidden;
+  margin-bottom: 16rpx;
+  background-color: white;
+}
+
+.attr_shop_wrap .img_thumb_wrap {
+  width: 180rpx;
+  margin-right: 20rpx;
+}
+
+.attr_shop_wrap .img_thumb_wrap image {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.attr_shop_wrap .right_wrap {
+  width: 70%;
+}
+
+.attr_shop_wrap .right_wrap .title {
+  font-size: 32rpx;
+}
+
+.attr_shop_wrap .right_wrap .title .left {
+  width: 60%;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.attr_shop_wrap .right_wrap .title .right {
+  width: 50rpx;
+}
+
+.attr_shop_wrap .right_wrap .title .right image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.attr_shop_wrap .right_wrap .stars image {
+  width: 128rpx;
+  height: 24rpx;
+  object-fit: cover;
+}
+
+.attr_shop_wrap .right_wrap .mesg {
+  display: inline-flex;
+  color: #666;
+  font-size: 24rpx;
+  margin-top: 8rpx;
+}
+
+.attr_shop_wrap .right_wrap .mesg image {
+  width: 30rpx;
+  height: 30rpx;
+  padding-right:5rpx;
+  vertical-align: top;
+}
+.attr_shop_wrap .right_wrap .mesg wx-text{
+  padding-right:16rpx;
+}
+
+.attr_shop_wrap .right_wrap .price {
+  color: #666;
+  font-size: 24rpx;
+  margin-top:14rpx;
+}
+
+.shop_act_wrap {
+  background-color: white;
+  margin-bottom: 16rpx;
+  padding:20rpx ;
+  
+  
+}
+.shop_act_wrap .sel {
+  text-align: center;
+}
+.shop_act_wrap .sel image{
+ width: 88rpx;
+  height: 88rpx;
+  display: block;
+  margin: 10px auto;
+}
+
+
+.attr_other_wrap {
+  background-color: white;
+  padding-left:30rpx;
+ margin-bottom: 20rpx;
+
+
+}
+.attr_other_wrap .mesgList{
+  line-height: 88rpx;
+  border-bottom:1px solid #e5e5e5;
+
+}
+.attr_other_wrap .mesgList image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-top:28rpx;
+  margin-right:16rpx;
+}

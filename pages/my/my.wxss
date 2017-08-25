@@ -1,0 +1,104 @@
+/* pages/my/my.wxss */
+
+page {
+  background: #fff;
+}
+
+.myinfo {
+  width: 100%;
+  height: 251rpx;
+  position: relative;
+}
+
+.myinfo .cont {
+  padding: 52rpx 74rpx;
+}
+
+.order_w {
+  margin-top: 76rpx;
+  border-top: 1rpx solid #dcdcdc;
+}
+
+.myinfo .vistar {
+  margin-right: 75rpx;
+}
+
+.vistar image {
+  width: 123rpx;
+  height: 123rpx;
+}
+
+.myinfo-headimgurl {
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.myinfo-title {
+  position: absolute;
+  top: 70rpx;
+  left: 0rpx;
+  width: 100%;
+  height: 280rpx;
+  /*background: #fff;*/
+}
+
+.myinfo-image {
+  width: 196rpx;
+  height: 196rpx;
+  border-radius: 50%;
+  background: #fff;
+  margin: auto;
+  text-align: center;
+}
+
+.nickname {
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  margin-top: 30rpx;
+  font-size: 30rpx;
+}
+
+.myinfo-image image {
+  width: 190rpx;
+  height: 190rpx;
+  border-radius: 50%;
+  margin-top: 4rpx;
+}
+
+.lister {
+  width: 100%;
+  height: 80rpx;
+  position: relative;
+  padding: 35rpx 0;
+  border-bottom: 1rpx solid #dcdcdc;
+}
+
+.xzlimit {
+  width: 100%;
+  height: 40rpx;
+  background: #fafafa;
+}
+
+.icon-image {
+  float: left;
+  width: 55rpx;
+  height: 55rpx;
+  margin: 15rpx 30rpx 0 20rpx;
+}
+
+.lister-text {
+  float: left;
+  font-size: 30rpx;
+  color: #666;
+  line-height: 80rpx;
+}
+
+.position-right {
+  width: 16rpx;
+  height: 30rpx;
+  position: absolute;
+  right: 50rpx;
+  top: 70rpx;
+}

@@ -1,0 +1,56 @@
+<view class="swiper-box">
+  <view class="top nh">
+    <view class="all fl active">
+      <view class="classname">
+        <image src="../../images/allodon.png"></image>
+      </view>
+      <text>全部订单</text>
+    </view>
+    <view class="comment fl">
+      <view class="classname">
+        <image src="../../images/comod.png"></image>
+      </view>
+      <text>待评价</text>
+    </view>
+    <view class="refund fl">
+      <view class="classname">
+        <image src="../../images/refundod.png"></image>
+      </view>
+      <text>退款</text>
+    </view>
+  </view>
+
+  <!--列表-->
+  <block wx:if="{{orders.length>0}}">
+    <view class="order_w" wx:for="{{orders}}">
+      <view class="shoppe">
+        <view class="shoppe-txt">
+          <view class="title ">订单编号：
+            <text>{{item.trade_no}}</text>
+            <view class="order_status fr">
+              状态：
+              <text class="status_txt"> {{item.status}}
+              </text>
+            </view>
+          </view>
+          <view class='row_'>下单时间：
+            <text>{{item.create_time}}</text>
+            <view class="fr">总价：
+              <text class="sumprice ">￥{{item.sum_price}}</text>
+            </view>
+          </view>
+          <view class="act row_  nh">
+            <button class="look_order fl">查看订单</button>
+            <button class="go_act fr">去付款</button>
+          </view>
+        </view>
+      </view>
+      <view class="hsip"></view>
+    </view>
+
+    <!--列表e-->
+  </block>
+  <block wx:else>
+    <view class="not_exists">暂无数据 ):</view>
+  </block>
+</view>

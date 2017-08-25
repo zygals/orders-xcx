@@ -1,0 +1,66 @@
+<view class="container">
+  <view class="sum">
+    已贡献
+    <text class="pjsum">3</text> 条评价
+  </view>
+  <view class="list_ nh">
+    <view class="user_ico fl">
+      <image src="../../images/usericon.png"></image>
+    </view>
+    <view class="cont_w fl">
+      <view class="cont_l">
+        <view class="username_ nh">
+          <text>username</text>
+          <view class="cont_r fr">
+            2014.12.12
+          </view>
+        </view>
+        <view class="cont_w2">
+          <text>
+            品名称品名称品名称品名称品名称
+          </text>
+        </view>
+        <view class="good_name_w">
+          <image src="../../images/zan.png"></image>
+          <text>商品名称 。。</text>
+        </view>
+        <view class="del_w">
+          <view class="del_img_w fr">
+            <image src="../../images/del_comment.png"></image>
+            <text>删除</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+    <view class="list_ nh">
+    <view class="user_ico fl">
+      <image src="../../images/usericon.png"></image>
+    </view>
+    <view class="cont_w fl">
+      <view class="cont_l">
+        <view class="username_ nh">
+          <text>username</text>
+          <view class="cont_r fr">
+            2014.12.12
+          </view>
+        </view>
+        <view class="cont_w2">
+          <text>
+            品名称品名称品名称品名称品名称
+          </text>
+        </view>
+        <view class="good_name_w">
+          <image src="../../images/zan.png"></image>
+          <text>商品名称 。。</text>
+        </view>
+        <view class="del_w">
+          <view class="del_img_w fr">
+            <image src="../../images/del_comment.png"></image>
+            <text>删除</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

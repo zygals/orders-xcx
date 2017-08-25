@@ -1,0 +1,33 @@
+<view class="myinfo" style="background:url('../../images/bbjj.png')">
+  <view class="cont nh">
+    <view class="vistar fl">
+      <image src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="info fl">
+      <view class="nickname">{{userInfo.nickName}}</view>
+      <view class="nickname">
+        <text>账号：</text>{{username}}</view>
+    </view>
+  </view>
+</view>
+<view>
+  <navigator url="/pages/orders/orders">
+    <view class="lister order_w">
+      <image src="../../images/ordericon.png" class="icon-image"></image>
+      <view class="lister-text">我的订单</view>
+      <image src="../../images/anrow.png" class="position-right"></image>
+    </view>
+  </navigator>
+
+</view>
+
+<view>
+  <navigator url="/pages/myComments/myComments">
+    <view class="lister">
+      <image src="../../images/wdpj.png" class="icon-image"></image>
+      <view class="lister-text">我的评价</view>
+      <image src="../../images/anrow.png" class="position-right"></image>
+    </view>
+  </navigator>
+
+</view>

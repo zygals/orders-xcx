@@ -1,0 +1,102 @@
+<navigator url="/pages/order/order">进入订单</navigator>
+<view class="container">
+  <block wx:if="{{shop}}">
+    <view class="attr_shop_wrap">
+      <view class="img_thumb_wrap fl">
+        <image src="{{imgurl+shop.img_thumb}}">
+        </image>
+      </view>
+      <view class="right_wrap fl">
+        <view class="title nh">
+          <view class="left fl">
+            <text>{{shop.name}}</text>
+          </view>
+          <!-- 
+        <view class="right fr">
+          <image src="../../images/collection.png" data-id="1" bindtap="xxx"></image>
+        </view>
+        -->
+        </view>
+        <view class="stars">
+          <view wx:if="ww">
+            <image src="../../images/start5.png"></image>
+          </view>
+        </view>
+        <view class="mesg">
+          <view wx:if="{{wifi}}">
+            <image src="../../images/wifi.png"></image>
+            <text>wifi</text>
+          </view>
+          <view wx:if="{{swingCard}}">
+            <image src="../../images/paybycard.png"></image>
+            <text>刷卡</text>
+          </view>
+          <view wx:if="{{carStop}}">
+            <image src="../../images/p.png"></image>
+            <text>停车位</text>
+          </view>
+          <view wx:if="{{box_}}">
+            <image src="../../images/box.png"></image>
+            <text>包厢</text>
+          </view>
+
+        </view>
+        <view class="price">
+          <text>￥{{shop.avg_price}}/人</text>
+        </view>
+      </view>
+    </view>
+    <view class="shop_act_wrap nh">
+      <navigator url="/pages/goods/goods?in_or_out=1" wx:if="{{inShop}}">
+        <view class=" sel">
+          <image src="../../images/fastfood.png"></image>
+          <text>堂食</text>
+        </view>
+      </navigator>
+      <navigator url="" wx:if="{{outShop}}"  url="/pages/goods/goods?in_or_out=2&fee_start_post={{shop.fee_start_post}}&fee_post={{shop.fee_post}}" >
+        <view class=" sel">
+          <image src="../../images/takeoutfood.png"></image>
+          <text>外卖</text>
+        </view>
+      </navigator>
+    </view>
+    <view class="attr_other_wrap">
+      <view class="mesgList">
+        <navigator url="" hover-class="">
+          <image class="leftIcon fl" src="../../images/details.png"></image>
+          <text class="text-over">{{shop.slogan}}</text>
+          <image class="rigIcon fr" src="../../images/arrow.png"></image>
+        </navigator>
+      </view>
+      <view class="mesgList">
+        <view bindtap="tapOpenAddress" data-longitude="{{shop.longitude}}" data-latitude="{{shop.latitude}}">
+          <image class="leftIcon fl" src="../../images/location.png"></image>
+          <text>{{shop.addr_detail+' '+shop.addr_name+' '+shop.address_more}}</text>
+          <image class="rigIcon fr" src="../../images/arrow.png"></image>
+        </view>
+      </view>
+      <view class="mesgList" data-phone="{{shop.phone}}" bindtap="tapCalling" hover-class="">
+        <image class="leftIcon fl" src="../../images/tel.png"></image>
+        <text>电话：{{shop.phone}}</text>
+        <image class="rigIcon fr" src="../../images/arrow.png"></image>
+      </view>
+      <view class="mesgList">
+        <image class="leftIcon " src="../../images/time.png"></image>
+        <text>营业时间：{{shop.start_time}} ~ {{shop.end_time}}</text>
+      </view>
+      <view class="mesgList">
+        <image class="leftIcon" src="../../images/wx.png"></image>
+        <text>微信：{{shop.wx}}</text>
+      </view>
+      <view class="mesgList">
+        <image class="leftIcon" src="../../images/qq.png"></image>
+        <text>QQ：{{shop.qq}}</text>
+      </view>
+
+    </view>
+  </block>
+  <block wx:else>
+    <view>暂时没有数据。。。</view>
+  </block>
+
+</view>

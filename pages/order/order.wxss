@@ -1,0 +1,345 @@
+
+view, text, input, image {
+  margin: 0;
+  padding: 0;
+}
+
+.mesg {
+  background: #fff;
+  margin: 0px 0 10px 0;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.mesgList {
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 30rpx;
+  color: #666;
+  position: relative;
+}
+
+.time {
+  position: absolute;
+  top: 20rpx;
+  left: 190rpx;
+  color: #f45a4f;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.mesgList .rigIcon {
+  position: absolute;
+  top: -2rpx;
+  right: 20rpx;
+}
+
+.choosetime navigator {
+  height: 88rpx;
+  overflow: hidden;
+}
+
+.choosetime {
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.chooseaddress {
+  padding: 20rpx 0;
+}
+
+.mesgList text {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.mesgList image {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.leftIcon {
+  float: left;
+  margin-top: 10px;
+  margin-right: 2px;
+}
+
+.mesgList .rigIcon {
+  float: right;
+  margin: 28rpx 20rpx 0 0;
+}
+
+.mesgList:last-child {
+  border-bottom: none;
+}
+
+/*****end 信息列表*****/
+
+.outfood {
+  padding-bottom: 40rpx;
+  min-height: 410rpx;
+  background: #fff;
+  margin: 30rpx 0;
+}
+
+.orderinformation {
+  height: 370rpx;
+  background: #fff;
+}
+
+.information {
+  height: 85rpx;
+  line-height: 85rpx;
+  border-bottom: 1px solid #e5e5e5;
+  padding-left: 10px;
+  font-size: 28rpx;
+  color: #999;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.variety {
+  margin-left: 30rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  box-shadow: border-box;
+  /*padding: 15rpx 0;*/
+}
+
+.variety-view {
+  padding: 15rpx 0;
+  position: relative;
+}
+
+.variety text {
+  display: block;
+}
+
+
+.varietyname {
+  font-size: 28rpx;
+}
+.order-viptext{
+  font-size:24rpx;
+  text-align: center;
+  line-height:35rpx;
+  border-radius:50%;
+  width:40rpx;
+  height:40rpx;
+  color:#fff;
+  background: #f45449;
+  position:absolute;
+  top:28rpx;
+}
+.vervip{
+  margin-left:50rpx;
+}
+.varietynum {
+  position: absolute;
+  right: 200rpx;
+  top: 0rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #bbb;
+  font-size: 26rpx;
+}
+
+.varietymou {
+  position: absolute;
+  right: 30rpx;
+  top: 5rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #333;
+  font-size: 26rpx;
+}
+
+.cost-total {
+  margin-left: 30rpx;
+  height: 90rpx;
+  position: relative;
+  border-top: 1px solid #e5e5e5;
+  line-height: 90rpx;
+}
+
+.cost-total:first {
+  border-top: none;
+}
+
+.fixedone {
+  width: 100%;
+  position: fixed;
+  /*background: rgba(0, 0, 0, 1);*/
+  background: #4a4848;
+  padding: 0 2rpx;
+  overflow: hidden;
+  bottom: -1rpx;
+  height: 95rpx;
+  line-height: 95rpx;
+  color: #fff;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.totalprice {
+  padding-left: 30rpx;
+}
+
+.fixedone view {
+  display: inline-block;
+  font-size: 36rpx;
+  margin-left: 30rpx;
+}
+
+
+.submitBtn {
+  width: 200rpx;
+  height: 95rpx;
+  font-size: 36rpx;
+  float: right;
+}
+
+.submitBtn button {
+  background: #f45449;
+  line-height: 95rpx;
+  margin-right: -1rpx;
+  height: 95rpx;
+  text-align: center;
+  border-radius: 0;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.textarea {
+  background: #fff;
+  padding: 30rpx;
+  height: 150rpx;
+  font-size: 36rpx;
+  color: #999;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.fe {
+  display: none;
+}
+
+
+
+page {
+  background: #f4f4f4;
+}
+
+.mesg {
+  background: #fff;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  /*margin: 30rpx 0;*/
+  position: relative;
+}
+
+.mesg-list {
+  border-bottom: 1px solid #e5e5e5;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 34rpx;
+  color: #000;
+  display: flex;
+  display: -webkit-flex;
+}
+
+
+.radio, .radio radio{
+  margin-right:20rpx;
+}
+.radiogroup {
+  padding-left: 15%;
+}
+
+.mesg view:last-child {
+  border-bottom: none;
+}
+
+.mesg textarea {
+  width: 100%;
+  height: 200rpx;
+  padding: 30rpx 20rpx 0 15%;
+  box-sizing:border-box;
+  -webkit-box-sizing: border-box;
+  overflow-y: scroll;
+  font-size: 34rpx;
+}
+
+.leftStyle {
+  display: block;
+  font-size: 34rpx;
+  color: #000;
+  width: 25%;
+  box-flex: 1;
+  -webkit-box-flex: 1;
+}
+
+.rightStyle {
+  font-size: 34rpx;
+  color: #666;
+}
+
+.yellow {
+  color: #ff6000;
+}
+
+.payBtn {
+  margin: 10px auto;
+}
+
+.inputStyle {
+  display: inline-block;
+  height: 88rpx;
+  line-height: 88rpx;
+  width: 85%;
+  position: relative;
+  z-index: 0;
+  box-flex: 1;
+  -webkit-box-flex: 1;
+}
+
+.jump {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.message {
+  width: 90%;
+  height: 150rpx;
+  background: #fff;
+  position: relative;
+  margin: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.message-jump {
+  width: 100%;
+  height: 70%;
+  text-align: center;
+  line-height: 100rpx;
+  color: #ff6000;
+  font-size: 28rpx;
+}
+
+.message-qux {
+  width: 90%;
+  text-align: right;
+  font-size: 28rpx;
+  color: #666;
+}

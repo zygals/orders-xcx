@@ -1,0 +1,101 @@
+<block wx:if="io">
+  <view class="container">
+    <view class="content-container">
+      <scroll-view class="classify-container" scroll-y>
+        <block wx:if="{{cates.length}}">
+          <view wx:for="{{cates}}" wx:for-index="index" class="classify {{cateSeleted==index?'active':''}}" data-index="{{index}}" data-cate_id="{{item.id}}" bindtap="tapCate">
+            <view class="name">{{item.name}}</view>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="not_exists">暂无分类数据 ):</view>
+        </block>
+      </scroll-view>
+      <scroll-view class="goods-container" scroll-y="true" scroll-into-view="" bindscroll="onGoodsScroll">
+        <block wx:if="{{goods.length}}">
+          <view class="good_wrap" wx:for="{{goods}}">
+            <view class="title">{{item.name}}</view>
+            <view class="goods">
+              <image class="pic" src="{{imgurl+item.img_thumb}}" data-img="{{item.img}}" data-imghidden="1" bindtap="tapImageOriginal"></image>
+              <view class="name ellipsis">{{item.name}}</view>
+              <view class="price">
+                <text class="price-prix">￥{{item.price_now}}</text>
+                <text class="price-text">原价￥{{item.price_original}}</text>
+                <!--<text class="price-text">赠送23积分</text> -->
+              </view>
+              <!--
+              <view class="reduce_w" hidden="{{item.reduce_btn_hidden==1}}">
+                <view class="reduceCart" bindtap="tapReduceCartGood" data-cart_good_num_reduce="1" data-price_now="{{item.price_now}}" data-good_id="{{item.id}}" data-cate_id="{{item.cate_id}}">
+                  <image src="../../images/rem.png"></image>
+                </view>
+                <text class="numCart">{{item.default_num}}</text>
+              </view>
+              -->
+
+              <view class="addCart" bindtap="tapAddCartGood" data-good_id="{{item.id}}" data-cate_id="{{item.cate_id}}" data-name="{{item.name}}" data-price_now="{{item.price_now}}" data-num="{{num}}" hidden="{{item.plus_default_show==0}}">
+                <image src="../../images/plus.png"></image>
+              </view>
+
+            </view>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="not_exists">暂无商品数据 ):</view>
+        </block>
+      </scroll-view>
+    </view>
+
+    <view class="cart-detail" hidden="{{cartGoodsHidden}}">
+
+      <view class="mask" data-show="0" bindtap="tapShowHideCartGoods"></view>
+
+      <view class="list">
+        <view class="cart_top nh">
+          <view data-show="1" class="emp fr" data-show="0" bindtap="tapClearCart">
+            清空购物车
+          </view>
+        </view>
+
+        <view class="item" data-show="1" bindtap="" wx:for="{{cartGoods}}">
+
+          <view class="name ellipsis">{{item.name}}</view>
+          <view class="name ellipsis" wx:if="as">{{item.num}} * {{item.price_now}} = ￥{{item.sum_price_good}}</view>
+          <view class="reduceCart reduce" bindtap="tapReduceCartGood" data-good_id="{{item.good_id}}" data-name="{{item.name}}" data-price_now="{{item.price_now}}">
+            <image src="../../images/rem.png"></image>
+          </view>
+          <view class="num">{{item.num}}</view>
+          <view class="addCart add" bindtap="tapAddCartGood" data-good_id="{{item.good_id}}" data-cate_id="{{item.cate_id}}" data-name="{{item.name}}" data-price_now="{{item.price_now}}" data-num="{{item.num}}">
+            <image src="../../images/plus.png"></image>
+          </view>
+
+        </view>
+
+      </view>
+    </view>
+    <view class="cart">
+      <view class="data" bindtap="tapShowHideCartGoods">
+        <view class="icon" data-show="1">
+          <image src="../../images/cart.png"></image>
+          <view class="count" hidden="{{sumNumHidden}}">{{sum_good_num}}</view>
+        </view>
+        <view class="total" data-show="1" hidden="{{sumPriceHidden}}">￥{{sumPrice}}</view>
+        <view class="fee_w" hidden="{{feePostHidden}}">
+          
+          <text class='fee2'>配送费：￥{{feePost}}</text>
+        </view>
+      </view>
+      <button  class="yellow fee_cha" hidden="{{feeStartHidden}}">
+    差{{feeCha}}元起送
+      </button>
+      <button hover-class="navigator-hover" class="yellow " disabled="{{selOkNo}}" bindtap="tapSelectOk" hidden="{{selectOkHidden}}">
+        选好了
+      </button>
+
+    </view>
+  </view>
+  <view class="imgfiexed " hidden data-imghidden="0" bindtap="imgenlarge">
+
+
+  </view>
+
+</block>

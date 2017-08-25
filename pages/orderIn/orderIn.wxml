@@ -1,0 +1,29 @@
+<view class="container">
+  <form bindsubmit="submitOrder">
+    <view class="outfood">
+      <view class="information">订单商品</view>
+      <block wx:for="{{orderGoods}}" wx:key="id">
+        <view class="variety-view">
+          <view class="variety">
+            <text class="varietyname">{{item.name}}</text>
+            <text class="varietynum">{{item.num}} x {{item.price_now}}</text>
+            <text class="varietymou">￥{{item.price_now*item.num}}</text>
+          </view>
+        </view>
+      </block>
+      <view class="cost-total">
+        <text class="varietyname">合计</text>
+        <text class="varietymou">￥{{order.sum_price}}</text>
+      </view>
+      <textarea placeholder="请输入备注（可不填写）" name="note" class="textarea" />
+    </view>
+    <view class="fixed">
+    </view>
+    <view class="fixedone">
+      <view>待支付：¥ {{order.sum_price}} </view>
+      <view redirect class="submitBtn">
+        <button form-type="submit" hover-class="navigator-hover">提交订单</button>
+      </view>
+    </view>
+  </form>
+</view>
