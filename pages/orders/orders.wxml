@@ -40,7 +40,9 @@
             </view>
           </view>
           <view class="act row_  nh">
+          <navigator url="/pages/details/details">
             <button class="look_order fl">查看订单</button>
+          </navigator>
 <block wx:if="{{item.status=='未支付'}}">
             <button class="go_act fr" >去付款</button>
             <button class="go_act fr" bindtap="cancelOrder" data-order_id="{{item.id}}">取消</button>

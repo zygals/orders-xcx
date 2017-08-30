@@ -1,0 +1,87 @@
+<!--pages/details/details.wxml-->
+<view class="wrapper">
+
+<!-- 顶部导航栏 -->
+  <view class="top nh">
+      <view class="all fl active">
+        <view class="classname">
+          <image src="../../images/allodon.png"></image>
+        </view>
+        <text>全部订单</text>
+      </view>
+      <view class="comment fl">
+        <view class="classname">
+          <image src="../../images/comod.png"></image>
+        </view>
+        <text>待评价</text>
+      </view>
+      <view class="refund fl">
+        <view class="classname">
+          <image src="../../images/refundod.png"></image>
+        </view>
+        <text>退款</text>
+      </view>
+    </view>
+    </view>
+
+<!-- 餐品详情栏 -->
+<view class="food-cont">
+<view class="store">订单状态 : 未支付</view>  
+<view class="food-item">
+  <view class="food-pic">
+    <image src="../../images/food.png"></image>
+    <view class="food-name">一品香过桥米线</view>
+    <view class="food-name">X1</view>
+  </view>
+  <view class="price">￥30.9</view>
+</view>
+<view class="food-item">
+  <view class="lunch-box">餐盒费</view>
+  <view class="price">￥2</view>
+</view>
+<view class="food-item">
+  <view class="dispatch">配送费</view>
+  <view class="price">￥2</view>
+</view>
+<view class="food-item">
+  <view class="cheep">已优惠￥27</view>
+  <view class="all-price"> 合计 : <text>￥36</text></view>
+</view>
+</view>
+
+<!-- 配送详情栏 -->
+<view class="dipatch-cont">
+<view class="dis-item">
+  <view class="dis-address">配送地址 :</view>
+  <view class="dis-sub">
+      15088880678
+      北京市丰台区第五街道
+  </view>
+</view>
+<view class="dis-item">
+  <view class="dis-service">配送服务 :</view>
+  <view class="dis-sub">
+      本店提供配送服务
+  </view>
+</view>
+</view>
+
+<!-- 订单详情栏 -->
+<view class="dipatch-cont">
+<view class="dis-item">
+  <view class="dis-address">订单号码 :</view>
+  <view class="dis-sub">15088880678114894945151</view>
+</view>
+<view class="dis-item">
+  <view class="dis-service">订单时间 :</view>
+  <view class="dis-sub">本店提供配送服务</view>
+</view>
+<view class="dis-item">
+  <view class="dis-service">支付方式 :</view>
+  <view class="dis-sub">微信支付</view>
+</view>
+<view class="dis-item">
+  <view class="dis-service">订单备注 :</view>
+  <view class="dis-sub">不吃辣</view>
+</view>
+</view>
