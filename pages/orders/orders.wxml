@@ -43,7 +43,7 @@
             <button class="look_order fl">查看订单</button>
 <block wx:if="{{item.status=='未支付'}}">
             <button class="go_act fr" >去付款</button>
-            <button class="go_act fr" >取消</button>
+            <button class="go_act fr" bindtap="cancelOrder" data-order_id="{{item.id}}">取消</button>
 </block>
 <block wx:elif="{{item.status=='已支付' && item.good_st=='待做'}}">
             <button class="go_act fr" >退款</button>

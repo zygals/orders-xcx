@@ -3,7 +3,6 @@ var common = require("../../utils/util.js");
 var app = getApp();
 var wxurl = app.globalData.wxurl;
 var imgurl = app.globalData.imgurl;
-var username = wx.getStorageSync('username');
 
 Page({
 
@@ -12,7 +11,7 @@ Page({
    */
   data: {
   userInfo:{},
-  username:username,
+  username:'',
   },
   getInfo: function () {
     var that = this;
@@ -22,11 +21,16 @@ Page({
         that.setData({
           userInfo: userInfo,
         });
+        var username = wx.getStorageSync('username');
+        if (username == "") {//如果用户名不存在，重新登录一次。
+          app.register();
+          username = wx.getStorageSync('username');
+        }
         //将用户信息：头像和昵称发送服务器
-        /*wx.request({
-          url: wxurl + 'wx.php/user/save',
+        wx.request({
+          url: wxurl + 'user/save',
           data: {
-            'name': username,
+            'username': username,
             'vistar': userInfo.avatarUrl,
             'nickname': userInfo.nickName,
             'sex': userInfo.gender,
@@ -34,7 +38,7 @@ Page({
           success: function (res) {
             //console.log('yes info');
           }
-        })*/
+        })
       },//如果不同意则提示用户设置为同意
       fail: function () {
         wx.openSetting({
@@ -55,6 +59,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var username = wx.getStorageSync('username');
+    if (username == "") {//如果用户名不存在，重新登录一次。
+      app.register();
+      username = wx.getStorageSync('username');
+    }
+    this.setData({
+      username: username,
+    });
     this.getInfo()
   },
 

@@ -47,6 +47,27 @@ Page({
       }
     );
   },
+  //取消订单
+  cancelOrder: function (e) {
+    var that = this;
+    var order_id = e.target.dataset.order_id;
+    wx.showModal({
+      title: '取消订单',
+      content: '确定要取消吗？取消后不可恢复',
+      success: function (res) {
+        if (res.confirm) {
+          //确定要删除则请求删除接口
+          common.httpG(wxurl + 'order/update_st', { order_id: order_id, status: "cancel" }, function (obj) {
+            wx.showToast({
+              title: '订单取消成功',
+            })
+            that.getOrders();
+          });
+        }
+      }
+    });
+
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
