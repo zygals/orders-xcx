@@ -75,8 +75,8 @@
   background-color: white;
   margin-bottom: 16rpx;
   padding:20rpx ;
-  
-  
+  display: flex;
+  justify-content: space-around;
 }
 .shop_act_wrap .sel {
   text-align: center;

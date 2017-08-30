@@ -1,0 +1,78 @@
+/* pages/details/details.wxss */
+
+.wrapper {
+  background-color: #fff;
+}
+.all, .comment, .refund {
+  width: 33%;
+  font-size: 28rpx;
+  font-weight: normal;
+  text-align: center;
+}
+ .active{
+  color:#f46a67;
+}
+.top {
+padding:30rpx 0;
+border-bottom:1rpx solid #dcdcdc;
+}
+.top image{
+  width:50rpx;
+  height:52rpx;
+}
+
+.food-cont,.dipatch-cont{
+  margin: 20rpx 0;
+  background-color: #fff;
+}
+.dipatch-cont {
+  padding-bottom:35rpx;
+}
+.store {
+  text-align: center;
+  padding: 20rpx 0;
+}
+.food-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 35rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #333;
+  border-bottom: 1px dashed #999;
+}
+.food-item:last-child {
+  justify-content: flex-end;
+  border-bottom: none;
+}
+.cheep {
+  margin-right: 16rpx;
+}
+
+.all-price text {
+  color: #f30;
+}
+
+.food-pic image{
+  float: left;
+  width: 80rpx;
+  height: 80rpx;
+}
+.food-pic .food-name {
+  margin-left: 120rpx;
+  line-height: 45rpx;
+}
+
+.dis-item {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 28rpx;
+  border-bottom: 1px dashed #999;
+  padding: 35rpx;
+}
+
+
+.dis-sub {
+  margin-left: 20rpx;
+}
