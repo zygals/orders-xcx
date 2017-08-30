@@ -1,17 +1,11 @@
 {
   "pages": [
-        "pages/orders/orders",
-      "pages/myComments/myComments",
-    "pages/index/index",
+      "pages/index/index",
+      "pages/orders/orders",
+    "pages/myComments/myComments",
     "pages/order/order",
-
     "pages/orderIn/orderIn", 
-    "pages/shop/shop",
     "pages/goods/goods",
-
-    "pages/address/address",
-    "pages/addAddress/addAddress",
-    "pages/editAddress/editAddress",
     "pages/my/my"
   ],
   "tabBar": {

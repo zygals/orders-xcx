@@ -22,14 +22,14 @@
 
   <!--列表-->
   <block wx:if="{{orders.length>0}}">
-    <view class="order_w" wx:for="{{orders}}">
+    <view class="order_w" wx:for="{{orders}}" wx:key="id">
       <view class="shoppe">
         <view class="shoppe-txt">
-          <view class="title ">订单编号：
-            <text>{{item.trade_no}}</text>
+          <view class="title ">订单类型：
+            <text>{{item.type}}</text>
             <view class="order_status fr">
               状态：
-              <text class="status_txt"> {{item.status}}
+              <text class="status_txt"> {{item.status}},{{item.good_st}}
               </text>
             </view>
           </view>
@@ -41,7 +41,22 @@
           </view>
           <view class="act row_  nh">
             <button class="look_order fl">查看订单</button>
-            <button class="go_act fr">去付款</button>
+<block wx:if="{{item.status=='未支付'}}">
+            <button class="go_act fr" >去付款</button>
+            <button class="go_act fr" >取消</button>
+</block>
+<block wx:elif="{{item.status=='已支付' && item.good_st=='待做'}}">
+            <button class="go_act fr" >退款</button>
+</block>
+<block wx:elif="{{item.status=='已支付' && item.good_st=='已送出'}}">
+            <button class="go_act fr" >确认收到</button>
+</block>
+<block wx:elif="{{item.status=='已支付' && item.good_st=='已收到'}}">
+            <button class="go_act fr" >评价</button>
+</block>
+<block wx:elif="{{item.status=='已支付' && item.good_st=='已评价'}}">
+            <button class="go_act fr" >删除</button>
+</block>
           </view>
         </view>
       </view>

@@ -22,7 +22,7 @@
     <view class="fixedone">
       <view>待支付：¥ {{order.sum_price}} </view>
       <view redirect class="submitBtn">
-        <button form-type="submit" hover-class="navigator-hover">提交订单</button>
+        <button form-type="submit" hover-class="navigator-hover">现在支付</button>
       </view>
     </view>
   </form>

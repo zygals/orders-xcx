@@ -1,9 +1,9 @@
-// pages/orders/orders.js
+// pages/orders/orders.js  我的所有订单
 var common = require("../../utils/util.js");
 var app = getApp();
 var wxurl = app.globalData.wxurl;
 var imgurl = app.globalData.imgurl;
-var username = wx.getStorageSync('username');
+
 const IN_ = app.globalData.in_;//堂食
 const OUT_ = app.globalData.out_;//送s
 
@@ -26,6 +26,11 @@ Page({
   //请求所有订单方法
   getOrders: function () {
     var that = this;
+    var username = wx.getStorageSync('username');
+    if (!username){
+      app.register();
+      username = wx.getStorageSync('username');
+    }
     common.httpG(
       wxurl + 'order/',
       {

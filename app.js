@@ -45,8 +45,8 @@ App({
     });
   },
   globalData:{
-    wxurl:"https://www.qingyy.net/orders/public/wx.php/",
-    imgurl: "https://www.qingyy.net/orders/public/",
+    wxurl:"https://huahui.qingyy.net/orders/public/wx.php/",
+    imgurl: "https://huahui.qingyy.net/orders/public/",
     in_:1,
     out_:2
   }

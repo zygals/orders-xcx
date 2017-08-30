@@ -3,7 +3,7 @@ var common = require("../../utils/util.js");
 var app = getApp();
 var wxurl = app.globalData.wxurl;
 var imgurl = app.globalData.imgurl;
-var username = wx.getStorageSync('username');
+
 const IN_ = app.globalData.in_;//堂食
 const OUT_ = app.globalData.out_;//送
 Page({
@@ -51,6 +51,7 @@ Page({
     this.setData({
       selOkNo: true,
     });
+    var username = wx.getStorageSync('username');
     if (username == "") {//如果用户名不存在，重新登录一次。
       app.register();
       username = wx.getStorageSync('username');
@@ -152,7 +153,6 @@ Page({
     for (var i = 0, len = cart_goods.length; i < len; i++) {
       sum_price += Number(cart_goods[i].sum_price_good) * 100;
     }
-    console.log('xiaoyu..', sum_price, fee_start_post)// 0  7
     if (sum_price / 100 < fee_start_post) {
       fee_cha = fee_start_post - sum_price / 100;
       this.setData({
@@ -191,7 +191,6 @@ Page({
   },
   //增加购物车商品事件
   tapAddCartGood: function (e) {
-
     var target_ = e.currentTarget.dataset;
     var good_id = target_.good_id,//购物车商品模型
       cate_id = target_.cate_id,
@@ -338,7 +337,6 @@ Page({
   loadCates: function () {
     var that = this;
     common.httpG(wxurl + "cate_shop_good", {}, function (res) {
-
       that.setData({
         cates: res.data.data,
         cateIdNow: res.data.data[0].id

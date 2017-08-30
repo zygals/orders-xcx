@@ -1,4 +1,4 @@
-<navigator url="/pages/order/order">进入订单</navigator>
+
 <view class="container">
   <block wx:if="{{shop}}">
     <view class="attr_shop_wrap">
@@ -53,7 +53,7 @@
           <text>堂食</text>
         </view>
       </navigator>
-      <navigator url="" wx:if="{{outShop}}"  url="/pages/goods/goods?in_or_out=2&fee_start_post={{shop.fee_start_post}}&fee_post={{shop.fee_post}}" >
+      <navigator wx:if="{{outShop}}"  url="/pages/goods/goods?in_or_out=2&fee_start_post={{shop.fee_start_post}}&fee_post={{shop.fee_post}}" >
         <view class=" sel">
           <image src="../../images/takeoutfood.png"></image>
           <text>外卖</text>
@@ -71,7 +71,7 @@
       <view class="mesgList">
         <view bindtap="tapOpenAddress" data-longitude="{{shop.longitude}}" data-latitude="{{shop.latitude}}">
           <image class="leftIcon fl" src="../../images/location.png"></image>
-          <text>{{shop.addr_detail+' '+shop.addr_name+' '+shop.address_more}}</text>
+          <text>{{shop.addr_detail+' '+shop.address_more}}</text>
           <image class="rigIcon fr" src="../../images/arrow.png"></image>
         </view>
       </view>
