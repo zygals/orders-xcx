@@ -1,66 +1,41 @@
 <view class="container">
   <view class="sum">
     已贡献
-    <text class="pjsum">3</text> 条评价
+    <text class="pjsum">{{num}}</text> 条评价
   </view>
-  <view class="list_ nh">
-    <view class="user_ico fl">
-      <image src="../../images/usericon.png"></image>
-    </view>
-    <view class="cont_w fl">
-      <view class="cont_l">
-        <view class="username_ nh">
-          <text>username</text>
-          <view class="cont_r fr">
-            2014.12.12
+
+    <view class="list_ nh" wx:for="{{list}}" wx:key='id'>
+      <view class="user_ico fl">
+        <image src="{{item.vistar}}"></image>
+      </view>
+      <view class="cont_w fl">
+        <view class="cont_l">
+          <view class="username_ nh">
+            <text>{{item.nickname}}</text>
+            <view class="cont_r fr">
+              {{item.create_time}}
+            </view>
           </view>
-        </view>
-        <view class="cont_w2">
-          <text>
-            品名称品名称品名称品名称品名称
+          <view class="cont_w2">
+            <text>
+            {{item.cont}}
           </text>
-        </view>
-        <view class="good_name_w">
-          <image src="../../images/zan.png"></image>
-          <text>商品名称 。。</text>
-        </view>
-        <view class="del_w">
-          <view class="del_img_w fr">
-            <image src="../../images/del_comment.png"></image>
-            <text>删除</text>
+          </view>
+          <view class="good_name_w">
+            <block wx:for="{{item.goods}}" wx:key="id" wx:for-item="good">
+              <image src="../../images/zan.png"></image>
+              <text>{{good.name}}</text>.
+            </block>
+          </view>
+          <view class="del_w">
+            <view class="del_img_w fr" bindtap="delFankui" data-fankui_id="{{item.id}}">
+              <image src="../../images/del_comment.png"></image>
+              <text>删除</text>
+            </view>
           </view>
         </view>
       </view>
     </view>
-  </view>
-    <view class="list_ nh">
-    <view class="user_ico fl">
-      <image src="../../images/usericon.png"></image>
-    </view>
-    <view class="cont_w fl">
-      <view class="cont_l">
-        <view class="username_ nh">
-          <text>username</text>
-          <view class="cont_r fr">
-            2014.12.12
-          </view>
-        </view>
-        <view class="cont_w2">
-          <text>
-            品名称品名称品名称品名称品名称
-          </text>
-        </view>
-        <view class="good_name_w">
-          <image src="../../images/zan.png"></image>
-          <text>商品名称 。。</text>
-        </view>
-        <view class="del_w">
-          <view class="del_img_w fr">
-            <image src="../../images/del_comment.png"></image>
-            <text>删除</text>
-          </view>
-        </view>
-      </view>
-    </view>
-  </view>
+
+     <view class="to_bottom" hidden="{{dxHidden}}">--已到底线--</view>
 </view>

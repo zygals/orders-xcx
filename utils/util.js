@@ -10,11 +10,11 @@ function formatTime(date) {
 
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
-function inArray(arr,obj){
+function inArray(arr, obj) {
   var len = arr.length;//4
 
-  while(len--){
-    if(arr[len]==obj){
+  while (len--) {
+    if (arr[len] == obj) {
       return true;
     }
   }
@@ -32,12 +32,13 @@ function httpG(url, data, callback) {
     url: url,
     data: data,
     success: function (res) {
-      if(res.data.code==0){
+      if (res.data.code == 0) {
         callback(res);
       }
     },
     fail: function (res) {
       console.log('request-get error:', res);
+
     },
     complete: function (res) {
       wx.hideLoading();
@@ -76,10 +77,12 @@ function trim(str) {
 }
 
 
+
 module.exports = {
   formatTime: formatTime,
-  httpP:httpP,
-  httpG:httpG,
-  trim:trim,
-  inArray:inArray
+  httpP: httpP,
+  httpG: httpG,
+  trim: trim,
+  inArray: inArray,
+  
 }

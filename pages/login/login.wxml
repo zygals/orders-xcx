@@ -1,0 +1,17 @@
+<!--pages/login/login.wxml-->
+<view class="container_shop">
+  <view class="title_w">
+    <text class="title">商户管理员登录</text>
+  </view>
+  <form bindsubmit="loginFormSubmit" class="loginForm">
+    <label class="label_">
+      <text>请输入用户名：</text>
+      <input type="text" name="name" class="input_" />
+    </label>
+    <label class="label_">
+      <text>密码：</text>
+      <input password name="pass"  class="input_" />
+    </label>
+    <button form-type="submit">确定</button>
+  </form>
+</view>

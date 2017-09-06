@@ -1,13 +1,17 @@
 {
   "pages": [
-      "pages/index/index",
-      "pages/details/details",
+ 
+    "pages/index/index",
+    "pages/details/details",
       "pages/orders/orders",
+    "pages/addfankui/addfankui",
     "pages/myComments/myComments",
     "pages/order/order",
     "pages/orderIn/orderIn", 
     "pages/goods/goods",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/address/address",
+    "pages/login/login"
   ],
   "tabBar": {
     "backgroundColor": "white",

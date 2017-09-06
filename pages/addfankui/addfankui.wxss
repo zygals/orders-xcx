@@ -1,0 +1,31 @@
+/* pages/addfankui/addfankui.wxss */
+.text-style {
+  width: 96%;
+  padding-top: 20rpx;
+  height: 350rpx;
+  margin: 80rpx auto;
+  border: 1rpx solid #efeeee;
+  font-size: 28rpx;
+  color: #999;
+  text-indent: 20rpx;
+}
+.section {
+  position: relative
+}
+.section button {
+  position: absolute;
+  right: 0;
+  margin-right: 30rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  padding: 0 50rpx;
+}
+
+.phone-number {
+  font-size: 28rpx;
+  text-align: center;
+  width: 80%;
+  margin: 200rpx auto;
+  border: 1rpx solid #efeeee;
+  padding: 20rpx 0;
+}

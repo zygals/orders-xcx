@@ -1,0 +1,38 @@
+
+<view class="container_shop">
+  <view class="btn_address_no_w" hidden="{{improveAddressHidden}}">
+    <button bindtap="tapChooseLocation">完善我的位置信息</button>
+  </view>
+
+  <view class="form_add_address_w" hidden="{{formHidden}}">
+
+    <form bindsubmit="submitAddress">
+      <label>
+        <text class="field_name">地址名称：</text>
+        <input type="text" name="addr_name" value="{{addressInfo.addr_name}}" />
+      </label>
+      <label>
+        <text class="field_name">详细地址：</text>
+        <input type="text" name="addr_detail" value="{{addressInfo.addr_detail}}" />
+      </label>
+      <label>
+        <text class="field_name">纬度：</text>
+        <input type="text" name="latitude" value="{{addressInfo.latitude}}" />
+      </label>
+      <label>
+        <text class="field_name">经度：</text>
+        <input type="text" name="longitude" value="{{addressInfo.longitude}}" />
+      </label>
+      <label>
+        <text class="field_name">地址补充：</text>
+        <input type="text" name="address_more" value="{{addressInfo.address_more}}" placeholder="如门牌号等..." />
+      </label>
+      <view class="but_submit_w">
+        <button form-type="submit" hidden="{{confirmAddressHidden}}">确定</button>
+         <button bindtap="tapEditAddress" hidden="{{editAddressHidden}}">修改</button>
+      </view>
+    </form>
+  </view>
+
+
+</view>

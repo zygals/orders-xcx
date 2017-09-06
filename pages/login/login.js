@@ -1,47 +1,46 @@
-// pages/orderIn/orderIn.js
+// pages/login/login.js
 var common = require("../../utils/util.js");
-var ord = require("../../utils/ord.js");
 var app = getApp();
-var wxurl = app.globalData.wxurl;
-var imgurl = app.globalData.imgurl;
-const IN_ = app.globalData.in_;//堂食
-const OUT_ = app.globalData.out_;//送
+var wxurl = app.globalData.wxshopurl;
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    orderGoods: [],
-    order: {}
-  },
 
+  },
+  loginFormSubmit: function (e) {
+    console.log(e);
+    var name = common.trim(e.detail.value.name), pass = common.trim(e.detail.value.pass);
+    if (name == '' || pass == '') {
+      wx.showToast({
+        title: '用户名或密码不能为空', //包含空字符串或是全部空格情况
+      })
+      return;
+    }
+    common.httpP(wxurl + "admin/check_pass", { name: name, pass: pass }, function (res) {
+      if (res.data.code == 0) {
+        //登录成功
+        wx.showToast({
+          title: res.data.msg,
+        })
+        //console.log('dddsfsfdsafd');
+        wx.setStorageSync("admin_name", res.data.data.name);
+        wx.redirectTo({
+          url: '/pages/address/address',
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    var new_order_id = options.new_order_id;
-    //根据订单号查询里面商品
-    common.httpG(wxurl + "order/get_order", {
-      'order_id': new_order_id,
-      'type': IN_
-    },
-      function (res) {
-        that.setData({
-          orderGoods: res.data.data.order_goods,
-          order: res.data.data.order
-        });
-
-      });
-    //console.log(new_order_id);
 
   },
-  //立即支付
-  payNow: function (e) {
 
-    ord.payNow(this, e, common);
-  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

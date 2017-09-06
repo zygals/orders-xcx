@@ -31,3 +31,14 @@
   </navigator>
 
 </view>
+
+<view>
+  <navigator url="/pages/address/address">
+    <view class="lister">
+      <image src="../../images/wdpj.png" class="icon-image"></image>
+      <view class="lister-text">我的地址</view>
+      <image src="../../images/anrow.png" class="position-right"></image>
+    </view>
+  </navigator>
+
+</view>

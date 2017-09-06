@@ -1,22 +1,22 @@
 <view class="swiper-box">
   <view class="top nh">
-    <view class="all fl active">
-      <view class="classname">
-        <image src="../../images/allodon.png"></image>
+    <view class="all fl" bindtap="getOrdersAll" >
+      <view class="classname" >
+        <image src="../../images/{{ordAll}}"></image>
       </view>
-      <text>全部订单</text>
+      <text class="{{active_all}}">全部订单</text>
     </view>
-    <view class="comment fl">
+    <view class="comment fl" bindtap="getOrdersDaiFanKui">
       <view class="classname">
-        <image src="../../images/comod.png"></image>
+        <image src="../../images/{{ordFankui}}"></image>
       </view>
-      <text>待评价</text>
+      <text class="{{active_fankui}}">待评价</text>
     </view>
-    <view class="refund fl">
+    <view class="refund fl" bindtap="getOrdersFefund">
       <view class="classname">
-        <image src="../../images/refundod.png"></image>
+        <image src="../../images/{{ordRefund}}"></image>
       </view>
-      <text>退款</text>
+      <text class="{{active_refund}}">退款</text>
     </view>
   </view>
 
@@ -29,7 +29,7 @@
             <text>{{item.type}}</text>
             <view class="order_status fr">
               状态：
-              <text class="status_txt"> {{item.status}},{{item.good_st}}
+              <text class="status_txt"> {{item.st}}
               </text>
             </view>
           </view>
@@ -40,34 +40,39 @@
             </view>
           </view>
           <view class="act row_  nh">
-          <navigator url="/pages/details/details">
-            <button class="look_order fl">查看订单</button>
-          </navigator>
-<block wx:if="{{item.status=='未支付'}}">
-            <button class="go_act fr" >去付款</button>
-            <button class="go_act fr" bindtap="cancelOrder" data-order_id="{{item.id}}">取消</button>
-</block>
-<block wx:elif="{{item.status=='已支付' && item.good_st=='待做'}}">
-            <button class="go_act fr" >退款</button>
-</block>
-<block wx:elif="{{item.status=='已支付' && item.good_st=='已送出'}}">
-            <button class="go_act fr" >确认收到</button>
-</block>
-<block wx:elif="{{item.status=='已支付' && item.good_st=='已收到'}}">
-            <button class="go_act fr" >评价</button>
-</block>
-<block wx:elif="{{item.status=='已支付' && item.good_st=='已评价'}}">
-            <button class="go_act fr" >删除</button>
-</block>
+            <navigator url="/pages/details/details?order_id={{item.id}}&type={{item.type}}">
+              <button class="look_order fl">查看订单</button>
+            </navigator>
+            <block wx:if="{{item.status=='未支付'}}">
+              <block wx:if="{{item.type=='堂食'}}">
+                <navigator url="/pages/orderIn/orderIn?new_order_id={{item.id}}"><button class="go_act fr">去付款</button></navigator>
+              </block>
+              <block wx:if="{{item.type=='外送'}}">
+                <navigator url="/pages/order/order?new_order_id={{item.id}}"><button class="go_act fr">去付款</button></navigator>
+              </block>
+              <button class="go_act fr" bindtap="cancelOrder" data-order_id="{{item.id}}">取消</button>
+            </block>
+            <block wx:if="{{item.status=='已支付' && item.good_st=='待做'}}">
+              <button class="go_act fr" bindtap="refund" data-order_id="{{item.id}}">退款</button>
+            </block>
+            <block wx:if="{{item.status=='已支付' && item.good_st=='已送出'}}">
+              <button class="go_act fr" bindtap="confirmTaken" data-order_id="{{item.id}}">确认收到</button>
+            </block>
+            <block wx:if="{{item.status=='已支付' && item.good_st=='已收到'}}">
+              <navigator url="/pages/addfankui/addfankui?order_id={{item.id}}"><button class="go_act fr">评价</button></navigator>
+            </block>
+            <block wx:if="{{(item.status=='已支付' && item.good_st=='已评价') || (item.status=='已支付' && item.good_st=='已收到') || item.status=='退款成功'}}">
+              <button class="go_act fr" bindtap="tapDel" data-order_id="{{item.id}}">删除</button>
+            </block>
           </view>
         </view>
       </view>
       <view class="hsip"></view>
     </view>
-
     <!--列表e-->
   </block>
   <block wx:else>
     <view class="not_exists">暂无数据 ):</view>
   </block>
+  <view class="to_bottom" hidden="{{dxHidden}}">--已到底线--</view>
 </view>

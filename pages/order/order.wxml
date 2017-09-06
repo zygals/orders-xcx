@@ -1,8 +1,7 @@
 <view class="container">
-  <form bindsubmit="submitOrder" wx:for-item="hhhh">
+  <form bindsubmit="payNowOut" wx:for-item="hhhh">
     <view class="mesg">
       <view class="mesgList" bindtap="">
-        <!--<navigator url="addaddress/addaddress" hover-class="navigator-hover" redirect>-->
         <block wx:if="{{orderAddress.id==0}}">
           <view class="chooseaddress" bindtap="tapChooseAdress">
             <image src="../../images/address.png"></image>
@@ -25,15 +24,11 @@
         <!--</navigator>-->
       </view>
       <view class="mesgList choosetime">
-
         <image class="leftIcon" src="../../images/time1.png"></image>
         <view>送达时间: 飞快
         </view>
-        <!-- <image class="rigIcon" src="../../images/arrow.png"></image> -->
-
       </view>
     </view>
-
     <view class="outfood">
       <view class="information">订单商品</view>
       <block wx:for="{{orderGoods}}" wx:key="id">
@@ -45,10 +40,16 @@
           </view>
         </view>
       </block>
+        <view class="cost-total">
+        <text class="varietyname">餐盒费</text>
+
+        <text class="varietymou">￥{{feeBox}}
+        </text>
+      </view>
       <view class="cost-total">
         <text class="varietyname">配送费</text>
 
-        <text class="varietymou" wx:if="hhhh">￥{{order.fee_post}}
+        <text class="varietymou" >￥{{order.fee_post}}
         </text>
       </view>
       <view class="cost-total">
@@ -64,7 +65,7 @@
     <view class="fixedone">
       <view>待支付：¥ {{order.sum_price}} </view>
       <view redirect class="submitBtn">
-        <button form-type="submit" hover-class="navigator-hover">立即支付</button>
+        <button form-type="submit" hover-class="navigator-hover" data-order_id="{{order.id}}">立即支付</button>
       </view>
     </view>
   </form>

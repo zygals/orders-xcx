@@ -46,6 +46,7 @@ App({
   },
   globalData:{
     wxurl:"https://huahui.qingyy.net/orders/public/wx.php/",
+    wxshopurl: "https://huahui.qingyy.net/orders/public/wx_shop.php/",
     imgurl: "https://huahui.qingyy.net/orders/public/",
     in_:1,
     out_:2

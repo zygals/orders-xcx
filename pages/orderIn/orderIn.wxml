@@ -1,5 +1,5 @@
 <view class="container">
-  <form bindsubmit="submitOrder">
+  <form bindsubmit="payNow">
     <view class="outfood">
       <view class="information">订单商品</view>
       <block wx:for="{{orderGoods}}" wx:key="id">
@@ -22,7 +22,7 @@
     <view class="fixedone">
       <view>待支付：¥ {{order.sum_price}} </view>
       <view redirect class="submitBtn">
-        <button form-type="submit" hover-class="navigator-hover">现在支付</button>
+        <button form-type="submit" hover-class="navigator-hover" data-order_id="{{order.id}}">现在支付</button>
       </view>
     </view>
   </form>

@@ -1,9 +1,9 @@
 // pages/order/order.js
 var common = require("../../utils/util.js");
+var ord = require("../../utils/ord.js");
 var app = getApp();
 var wxurl = app.globalData.wxurl;
 var imgurl = app.globalData.imgurl;
-var username = wx.getStorageSync('username');
 const IN_ = app.globalData.in_;//堂食
 const OUT_ = app.globalData.out_;//送s
 
@@ -15,87 +15,55 @@ Page({
     order: {},
     orderGoods: [],
     orderAddress: {},
+    feeBox: 0,
   },
+  /**
+   * 生命周期函数--监听页面加载 //外送订单
+   */
+  onLoad: function (options) {
+    var that = this;
+    var new_order_id = options.new_order_id;   //
+    var username = wx.getStorageSync('username');
+    if (!username) {
+      app.register();
+      username = wx.getStorageSync('username');
+    }
 
-  //立即支付
-  payNow: function () {
-    wx.showLoading({
-      title: '请求支付中...',
-    })
-    var order_id = this.data.order.id;
-    //username = username;
-    // console.log(order_id, username)
-    //return ;
-    common.httpP(
-      wxurl + 'pay/pay_now',
+    //根据订单号查询里面商品
+    common.httpG(wxurl + "order/get_order",
       {
-        order_id: order_id,
-        username: username
+        'order_id': new_order_id,
+        'type': OUT_, //
+        "username": username,
       },
       function (res) {
-        console.log(res.data)
-        // return;
-        if (res.data.state == 1) {
-          console.log('服务器请求微信接口成功')
-          wx.hideLoading();
-          // return ;
-          //调起客户端支付功能
-          wx.requestPayment({
-            timeStamp: res.data.timeStamp,
-            nonceStr: res.data.nonceStr,
-            'package': res.data.package,
-            signType: 'MD5',
-            paySign: res.data.paySign,//签名,
-            success: function (res) {
-              //更改订单状态为已支付
-              common.httpP(
-                wxurl + 'order/update_status',
-                {
-                  order_id: order_id,
-                  status: 'paid'
-                },
-                function (res) {
-
-                }
-              );
-              //支付成功转至所有订单页面
-              wx.redirectTo({
-                url: '/pages/orders/orders',
-              })
-            },
-            'fail': function (res) {
-              console.log(res)
-            }
-          })
+        that.setData({
+          orderGoods: res.data.data.order_goods,
+          order: res.data.data.order,
+          orderAddress: res.data.data.address
+        });
+        //计算餐盒费总和
+        var orderGoods = that.data.orderGoods;
+        var feeBox = 0;
+        for (var i = 0; i < orderGoods.length; i++) {
+          feeBox += Number(orderGoods[i].fee_canhe);
+          that.setData({
+            feeBox: feeBox,
+          });
         }
-      }
-    );
+      });
+
   },
-  submitOrder: function (e) {
+  //立即支付-外送
+
+  payNowOut: function (e) {
     if (this.data.orderAddress.id == 0) {
       wx.showToast({
         title: '请添加地址',
       })
       return;
     }
-    // console.log(e);
-    var note = e.detail.value.note;
-    var order_id = this.data.order.id;
-    if (note != '') {
-      common.httpP(
-        wxurl + 'order/add_note',
-        {
-          order_id: order_id,
-          note: note,
-
-        },
-        function (res) {
-        }
-      );
-    }
-    //请求支付
-    this.payNow();
-
+    ord.payNow(this, e, common);
   },
   //选择收货地
   tapChooseAdress: function () {
@@ -156,32 +124,7 @@ Page({
       }
     })
   },
-  /**
-   * 生命周期函数--监听页面加载 //外送订单
-   */
-  onLoad: function (options) {
-    var that = this;
-    var new_order_id = options.new_order_id;   //
-  //  new_order_id = 7;
 
-    //根据订单号查询里面商品
-    common.httpG(wxurl + "order/get_order",
-      {
-        'order_id': new_order_id,
-        'type': OUT_, //
-        "username": username,
-      },
-      function (res) {
-        that.setData({
-          orderGoods: res.data.data.order_goods,
-          order: res.data.data.order,
-          orderAddress: res.data.data.address
-        });
-
-      });
-    //根据订单id查询所有相关信息:
-
-  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

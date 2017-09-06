@@ -5,6 +5,12 @@
   font-size:30rpx;
   overflow: hidden;
 } 
+.container_shop{
+font-size:28rpx;
+color:#666;
+padding:30rpx;
+
+}
 .fl{
   float:left;
 }
@@ -27,5 +33,14 @@ page {
   text-align: center;
   color:red;
   font-size:30rpx;
+
+}
+.to_bottom{
+  text-align:center;
+  font-size:26rpx;
+  border-bottom:1px solid #ecedeb;
+  line-height:3rpx;
+  color: #999;
+  padding-bottom:6rpx;
 
 }

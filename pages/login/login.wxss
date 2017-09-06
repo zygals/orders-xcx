@@ -1,0 +1,12 @@
+/* pages/login/login.wxss */
+
+.container .title_w{
+  text-align: center;
+  margin-bottom:30rpx;
+  font-size:32rpx;
+}
+.loginForm .input_{
+  background-color: #f2f2f2;
+  margin:20rpx 0;
+  height:200%;
+}

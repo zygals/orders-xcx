@@ -1,0 +1,13 @@
+<form bindsubmit="addFankui">
+<view class="section">
+  <textarea bindconfirm="addFankui2" placeholder="请写下您的宝贵意见" class='text-style' name="cont" />
+</view>
+<view class="section">
+    <button form-type="submit" > 提交 </button>
+</view>
+<navigator url="url">
+  <view class="phone-number">客服电话: 058-456789</view>
+</navigator>
+
+</form>
+
